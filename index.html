@@ -1,100 +1,235 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title> – Ogni ricerca fa la differenza</title>
-  <meta name="description" content=" è un motore di ricerca solidale: ogni ricerca sostiene progetti umanitari per.">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #f3f6f9;
-      color: #222;
-    }
-    header {
-      background: #01726c;
-      padding: 1.5em;
-      color: white;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2em;
-    }
-    .subtext {
-      font-size: 1em;
-      margin-top: 0.5em;
-    }
-    main {
-      padding: 2em;
-      max-width: 800px;
-      margin: auto;
-      text-align: center;
-    }
-    .search-box {
-      margin: 2em 0;
-    }
-    .referral-grid {
-      display: flex;
-      gap: 1em;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-top: 2em;
-    }
-    .referral {
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      padding: 1em;
-      width: 160px;
-      text-align: center;
-      text-decoration: none;
-      color: #01726c;
-      font-weight: bold;
-    }
-    .referral:hover {
-      background: #01726c;
-      color: white;
-    }
-    footer {
-      margin-top: 4em;
-      text-align: center;
-      font-size: 0.9em;
-      color: #666;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaza Action - Search to Support</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TP3S3CX0L4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-TP3S3CX0L4');
+    </script>
+    
+    <script async src="https://cse.google.com/cse.js?cx=e36db80eb79a24fd4"></script>
+
+    <style>
+        /* BASE STYLES & FONT */
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            color: #E0E0E0;
+            background-color: #202123; /* Sfondo scuro per look pulito */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        /* SFONDO (Placeholder per l'immagine stile Caravaggio) */
+        .background-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* SOSTITUIRE CON IL TUO URL DELL'IMMAGINE STILE CARAVAGGIO */
+            background-image: url('URL_IMMAGINE_CARAVAGGIO_QUI.jpg'); 
+            background-size: cover;
+            background-position: center;
+            filter: brightness(0.4) blur(2px); /* Oscura e sfuma l'immagine */
+            z-index: -2;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6); /* Overlay scuro per leggibilità */
+            z-index: -1;
+        }
+
+        /* HEADER & LOGO */
+        header {
+            padding: 20px 40px;
+            display: flex;
+            justify-content: center; /* Centra il logo in alto */
+            z-index: 10;
+        }
+        .logo {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: #4CAF50; /* Verde come il germoglio */
+            text-decoration: none;
+        }
+        .logo span {
+            color: #E0E0E0;
+        }
+
+        /* MAIN CONTENT */
+        main {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            text-align: center;
+            z-index: 10;
+        }
+
+        /* CSE CONTAINER */
+        .cse-container {
+            width: 100%;
+            max-width: 650px; /* Larghezza simile a ChatGPT/Ecosia */
+            padding-top: 50px;
+        }
+        /* Stili per la barra di ricerca del CSE */
+        .gsc-control-cse {
+            padding: 0 !important; /* Rimuove padding di default */
+        }
+        .gsc-input {
+            padding: 0 !important;
+        }
+        .gsc-search-button-v2 {
+            padding: 0 !important;
+        }
+        .gsc-search-box {
+            border-radius: 25px;
+            background-color: #383838; /* Sfondo scuro per il campo input */
+            border: 1px solid #555;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+            transition: border-color 0.3s ease;
+        }
+        /* Stili per l'input box effettivo */
+        input.gsc-input {
+            background: transparent !important;
+            color: #E0E0E0 !important;
+            height: 50px !important;
+            padding-left: 20px !important;
+            box-sizing: border-box;
+            border: none !important;
+        }
+        /* Stili per il pulsante di ricerca */
+        .gsc-search-button {
+             /* Nasconde il pulsante di Google se si preferisce affidarsi al solo input field */
+             display: none; 
+        }
+
+        .impact-text {
+            margin-top: 30px;
+            font-size: 1.1em;
+            color: #B0B0B0;
+        }
+        .highlight {
+            color: #4CAF50;
+            font-weight: 700;
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 20px;
+            text-align: center;
+            z-index: 10;
+            margin-top: auto;
+        }
+        footer a {
+            color: #A0A0A0;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 0.9em;
+            transition: color 0.3s ease;
+        }
+        footer a:hover {
+            color: #FFFFFF;
+        }
+        
+        /* POPUP COOKIE */
+        .cookie-popup {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #252525;
+            color: #E0E0E0;
+            padding: 15px 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            font-size: 0.9em;
+            display: none; /* Inizialmente nascosto */
+            z-index: 1000;
+            max-width: 90%;
+            text-align: center;
+        }
+        .cookie-popup button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: background-color 0.3s ease;
+        }
+        .cookie-popup button:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
+    <div class="background-image"></div>
+    <div class="overlay"></div>
 
-<header>
-  <h1>HelpAid</h1>
-  <div class="subtext">Ogni ricerca sostiene il sociale – naviga e aiuta con un click</div>
-</header>
+    <header>
+        <a href="/" class="logo">Gaza<span style="color:#E0E0E0;">Action</span></a>
+    </header>
 
-<main>
-  <p>Usa HelpAid per cercare su internet: il 100% dei proventi pubblicitari viene donata a ONG.</p>
+    <main>
+        <div class="cse-container">
+            <gcse:search></gcse:search>
+        </div>
+        
+        <p class="impact-text">
+            Every search is an <span class="highlight">action</span>. Use Gaza Action to search the web and generate funds for humanitarian support.
+        </p>
+    </main>
 
-  <div class="search-box">
-    <!-- Motore di ricerca Google CSE -->
-    <script async src="https://cse.google.com/cse.js?cx=e36db80eb79a24fd4"></script>
-    <div class="gcse-search"></div>
-  </div>
+    <footer>
+        <a href="#about">About Us</a>
+        <a href="#impact">Our Impact</a>
+        <a href="#privacy">Privacy Policy</a>
+        <a href="#contact">Contact</a>
+    </footer>
 
-  <h2>Supporta anche facendo acquisti</h2>
-  <p>I seguenti link contengono codici affiliati: ogni acquisto genera una donazione indiretta.</p>
-  <div class="referral-grid">
-    <a href="https://www.amazon.it/?tag=TUO-CODICE" class="referral" target="_blank">Amazon</a>
-    <a href="https://www.booking.com/index.html?aid=TUO-CODICE" class="referral" target="_blank">Booking</a>
-    <a href="https://s.click.aliexpress.com/e/_TUOCODICE" class="referral" target="_blank">AliExpress</a>
-  </div>
+    <div class="cookie-popup" id="cookiePopup">
+        Questo sito utilizza i cookie per l'analisi (Google Analytics) e la pubblicità (Google CSE). Cliccando su "Accetta" acconsenti al loro utilizzo.
+        <button onclick="acceptCookies()">Accetta</button>
+    </div>
 
-</main>
+    <script>
+        // Funzione per mostrare il pop-up e impostare il cookie
+        function checkCookie() {
+            if (localStorage.getItem('cookiesAccepted') !== 'true') {
+                document.getElementById('cookiePopup').style.display = 'block';
+            }
+        }
 
-<footer>
-  © 2025 HelpAid – Iniziativa no-profit per il bene comune. <br />
-  Powered by le tue ricerche.
-</footer>
+        // Funzione per accettare i cookie
+        function acceptCookies() {
+            localStorage.setItem('cookiesAccepted', 'true');
+            document.getElementById('cookiePopup').style.display = 'none';
+        }
 
+        // Mostra il pop-up quando la pagina è caricata
+        window.onload = checkCookie;
+    </script>
 </body>
 </html>
