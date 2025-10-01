@@ -39,10 +39,11 @@
             width: 100%;
             height: 100%;
             /* SOSTITUIRE CON IL TUO URL DELL'IMMAGINE STILE CARAVAGGIO */
-            background-image: url('URL_IMMAGINE_CARAVAGGIO_QUI.jpg'); 
+            /* Questa è un'immagine placeholder base, la tua immagine reale sarà più d'impatto */
+            background-image: linear-gradient(rgba(0,0,0,0.8), rgba(68,36,0,0.8)), url('https://via.placeholder.com/1920x1080/442400/333333?text=Caravaggio+Style+Background+Placeholder'); 
             background-size: cover;
             background-position: center;
-            filter: brightness(0.4) blur(2px); /* Oscura e sfuma l'immagine */
+            filter: brightness(0.9); /* Leggermente più luminoso per contrasto con l'overlay */
             z-index: -2;
         }
 
@@ -52,7 +53,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.6); /* Overlay scuro per leggibilità */
+            background-color: rgba(0, 0, 0, 0.4); /* Overlay scuro */
             z-index: -1;
         }
 
@@ -91,20 +92,15 @@
             max-width: 650px; /* Larghezza simile a ChatGPT/Ecosia */
             padding-top: 50px;
         }
-        /* Stili per la barra di ricerca del CSE */
+        
+        /* Stili per la barra di ricerca del CSE - Overrides */
         .gsc-control-cse {
-            padding: 0 !important; /* Rimuove padding di default */
-        }
-        .gsc-input {
-            padding: 0 !important;
-        }
-        .gsc-search-button-v2 {
             padding: 0 !important;
         }
         .gsc-search-box {
-            border-radius: 25px;
-            background-color: #383838; /* Sfondo scuro per il campo input */
-            border: 1px solid #555;
+            border-radius: 25px !important;
+            background-color: #383838 !important;
+            border: 1px solid #555 !important;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
             transition: border-color 0.3s ease;
@@ -117,11 +113,12 @@
             padding-left: 20px !important;
             box-sizing: border-box;
             border: none !important;
+            font-size: 1em !important;
+            line-height: 50px !important;
         }
-        /* Stili per il pulsante di ricerca */
-        .gsc-search-button {
-             /* Nasconde il pulsante di Google se si preferisce affidarsi al solo input field */
-             display: none; 
+        /* Nasconde il pulsante di ricerca predefinito di Google per un look più pulito */
+        .gsc-search-button-v2, .gsc-search-box-tools .gsc-search-button-v2 {
+             display: none !important; 
         }
 
         .impact-text {
@@ -194,8 +191,9 @@
 
     <main>
         <div class="cse-container">
-            <gcse:search></gcse:search>
-        </div>
+            <gcse:searchbox-only></gcse:searchbox-only>
+            
+            </div>
         
         <p class="impact-text">
             Every search is an <span class="highlight">action</span>. Use Gaza Action to search the web and generate funds for humanitarian support.
@@ -217,6 +215,7 @@
     <script>
         // Funzione per mostrare il pop-up e impostare il cookie
         function checkCookie() {
+            // Controlla se l'utente ha già accettato i cookie
             if (localStorage.getItem('cookiesAccepted') !== 'true') {
                 document.getElementById('cookiePopup').style.display = 'block';
             }
