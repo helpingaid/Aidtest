@@ -1,70 +1,96 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>GazaAction – Ogni ricerca fa la differenza</title>
-  <meta name="description" content="Cerca sul web con GazaAction: gli introiti pubblicitari vengono donati in beneficenza." />
-  <link rel="preconnect" href="https://www.googletagmanager.com">
-  <style>
-    body { font-family: Arial, sans-serif; margin:0; padding:0; }
-    header { padding:10px 20px; background:#e8f1ec; display:flex; justify-content:space-between; }
-    .logo { font-weight:bold; color:#2f7c6e; }
-    nav a { margin:0 10px; text-decoration:none; color:#333; }
-    .hero { padding:40px 20px; text-align:center; }
-    .search-box { margin:20px auto; max-width:600px; }
-    footer { padding:20px; text-align:center; font-size:14px; color:#555; }
-    #cookie {position:fixed;bottom:10px;left:10px;right:10px;background:#fff;padding:15px;border:1px solid #ccc;display:none;}
-    #cookie button{margin-left:10px;}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaza Action - Ogni ricerca fa la differenza</title>
+
+    <link rel="stylesheet" href="style.css"> 
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TP3S3CX0L4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-TP3S3CX0L4');
+    </script>
+
 </head>
 <body>
-  <header>
-    <div class="logo">GAZA ACTION</div>
-    <nav>
-      <a href="#about">Chi Siamo</a>
-      <a href="#partners">Partner</a>
-      <a href="#resources">Risorse</a>
-    </nav>
-  </header>
-  <section class="hero">
-    <h1>Ogni ricerca fa la differenza</h1>
-    <div class="search-box">
-      <div class="gcse-searchbox-only" data-enableAutoComplete="true"></div>
+
+    <div id="cookie-popup" class="cookie-popup">
+        <p>Utilizziamo i cookie per migliorare la tua esperienza. Acconsenti all'uso? <button onclick="accettaCookie()">Accetto</button></p>
     </div>
-    <p>Cerca su GazaAction e aiuta</p>
-  </section>
-  <section id="about" style="padding:20px;">
-    <h2>Come funziona</h2>
-    <p>Le tue ricerche generano introiti pubblicitari tramite Google CSE. Il 100% viene donato.</p>
-  </section>
-  <section id="partners" style="padding:20px;">
-    <h2>Supporta anche facendo acquisti</h2>
-    <p><a href="#">Amazon</a> | <a href="#">Booking</a> | <a href="#">eBay</a> | <a href="#">Zalando</a></p>
-  </section>
-  <footer id="resources">
-    <p>© <span id="year"></span> GazaAction</p>
-  </footer>
+    
+    <header class="hero-section">
+        <div class="header-bar">
+            <div class="logo">
+                <img src="Gemini_Generated_Image_30io5230io5230io.jpg" alt="Logo Gaza Action">
+            </div>
+            
+            <nav class="main-nav">
+                <a href="#chi-siamo">Chi Siamo</a>
+                <a href="#partner">Partner</a>
+                <a href="#risorse">Risorse</a>
+                <div id="language-switcher">IT | EN | AR </div>
+            </nav>
+        </div>
 
-  <div id="cookie">
-    Usiamo cookie per analisi e ricerca personalizzata. Accetti?
-    <button id="cookieAccept">Accetta</button>
-    <button id="cookieReject">Rifiuta</button>
-  </div>
+        <div class="search-area">
+            <h1>Ogni ricerca fa la differenza</h1>
+            
+            <div class="gcse-searchbox-only" data-resultsUrl="risultati.html" data-queryParameterName="searchQuery"></div>
+        </div>
+    </header>
 
-  <script>
-    document.getElementById('year').textContent=new Date().getFullYear();
-    const banner=document.getElementById('cookie');
-    const k='consent';const c=localStorage.getItem(k);
-    function loadGA(){var s=document.createElement('script');s.async=true;
-      s.src='https://www.googletagmanager.com/gtag/js?id=G-TP3S3CX0L4';document.head.appendChild(s);
-      window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.gtag=gtag;
-      gtag('js',new Date());gtag('config','G-TP3S3CX0L4');}
-    function loadCSE(){var s=document.createElement('script');s.async=true;
-      s.src='https://cse.google.com/cse.js?cx=e36db80eb79a24fd4';document.head.appendChild(s);}
-    if(c==='yes'){loadGA();loadCSE();}else if(c!=='no'){banner.style.display='block';}
-    document.getElementById('cookieAccept').onclick=()=>{localStorage.setItem(k,'yes');banner.remove();loadGA();loadCSE();};
-    document.getElementById('cookieReject').onclick=()=>{localStorage.setItem(k,'no');banner.remove();};
-  </script>
+    <section class="how-it-works">
+        <h2>Come Funziona</h2>
+        <div class="flow-icons">
+            <div class="step">
+                <span class="icon-lente">🔍</span>
+                <p>Le tue ricerche</p>
+            </div>
+            <span class="arrow">→</span>
+            <div class="step">
+                 <span class="icon-pubblicita">→</span>
+                <p>generano introiti pubblicitari da Google CSE.</p>
+            </div>
+            <span class="arrow">→</span>
+            <div class="step">
+                <span class="icon-cuore">🤍</span>
+                <p>Il 100% viene donato.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="affiliates-section">
+        <h2>Supporta anche facendo acquisti</h2>
+        <div class="affiliate-cards">
+            <button class="affiliate-btn amazon-btn">Acquista su Amazon e Dona</button>
+            <button class="affiliate-btn booking-btn">Booking.com</button>
+            <button class="affiliate-btn ebay-btn">eBay</button>
+            <button class="affiliate-btn zalando-btn">Zalando e Dona</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>Copyright 2024 Gaza Action</p>
+        <p><a href="#">Trasparenza & FAQ</a></p>
+    </footer>
+
+    <script async src="https://cse.google.com/cse.js?cx=e36db80eb79a24fd4"></script>
+
+    <script>
+        function accettaCookie() {
+            document.getElementById('cookie-popup').style.display = 'none';
+            // Qui andrebbe la logica per salvare la preferenza cookie (es. localStorage)
+        }
+        
+        // Logica PLACEHOLDER per visualizzare il pop-up
+        window.onload = function() {
+            // Se l'utente non ha ancora accettato, mostra il pop-up:
+            // document.getElementById('cookie-popup').style.display = 'flex'; 
+        };
+    </script>
 </body>
 </html>
