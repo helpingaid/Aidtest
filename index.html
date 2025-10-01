@@ -1,234 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gaza Action - Search to Support</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TP3S3CX0L4"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-TP3S3CX0L4');
-    </script>
-    
-    <script async src="https://cse.google.com/cse.js?cx=e36db80eb79a24fd4"></script>
-
-    <style>
-        /* BASE STYLES & FONT */
-        body {
-            margin: 0;
-            font-family: 'Roboto', sans-serif;
-            color: #E0E0E0;
-            background-color: #202123; /* Sfondo scuro per look pulito */
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            line-height: 1.6;
-        }
-
-        /* SFONDO (Placeholder per l'immagine stile Caravaggio) */
-        .background-image {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            /* SOSTITUIRE CON IL TUO URL DELL'IMMAGINE STILE CARAVAGGIO */
-            /* Questa è un'immagine placeholder base, la tua immagine reale sarà più d'impatto */
-            background-image: linear-gradient(rgba(0,0,0,0.8), rgba(68,36,0,0.8)), url('https://via.placeholder.com/1920x1080/442400/333333?text=Caravaggio+Style+Background+Placeholder'); 
-            background-size: cover;
-            background-position: center;
-            filter: brightness(0.9); /* Leggermente più luminoso per contrasto con l'overlay */
-            z-index: -2;
-        }
-
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.4); /* Overlay scuro */
-            z-index: -1;
-        }
-
-        /* HEADER & LOGO */
-        header {
-            padding: 20px 40px;
-            display: flex;
-            justify-content: center; /* Centra il logo in alto */
-            z-index: 10;
-        }
-        .logo {
-            font-size: 1.8em;
-            font-weight: 700;
-            color: #4CAF50; /* Verde come il germoglio */
-            text-decoration: none;
-        }
-        .logo span {
-            color: #E0E0E0;
-        }
-
-        /* MAIN CONTENT */
-        main {
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            text-align: center;
-            z-index: 10;
-        }
-
-        /* CSE CONTAINER */
-        .cse-container {
-            width: 100%;
-            max-width: 650px; /* Larghezza simile a ChatGPT/Ecosia */
-            padding-top: 50px;
-        }
-        
-        /* Stili per la barra di ricerca del CSE - Overrides */
-        .gsc-control-cse {
-            padding: 0 !important;
-        }
-        .gsc-search-box {
-            border-radius: 25px !important;
-            background-color: #383838 !important;
-            border: 1px solid #555 !important;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
-            transition: border-color 0.3s ease;
-        }
-        /* Stili per l'input box effettivo */
-        input.gsc-input {
-            background: transparent !important;
-            color: #E0E0E0 !important;
-            height: 50px !important;
-            padding-left: 20px !important;
-            box-sizing: border-box;
-            border: none !important;
-            font-size: 1em !important;
-            line-height: 50px !important;
-        }
-        /* Nasconde il pulsante di ricerca predefinito di Google per un look più pulito */
-        .gsc-search-button-v2, .gsc-search-box-tools .gsc-search-button-v2 {
-             display: none !important; 
-        }
-
-        .impact-text {
-            margin-top: 30px;
-            font-size: 1.1em;
-            color: #B0B0B0;
-        }
-        .highlight {
-            color: #4CAF50;
-            font-weight: 700;
-        }
-
-        /* FOOTER */
-        footer {
-            padding: 20px;
-            text-align: center;
-            z-index: 10;
-            margin-top: auto;
-        }
-        footer a {
-            color: #A0A0A0;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 0.9em;
-            transition: color 0.3s ease;
-        }
-        footer a:hover {
-            color: #FFFFFF;
-        }
-        
-        /* POPUP COOKIE */
-        .cookie-popup {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #252525;
-            color: #E0E0E0;
-            padding: 15px 25px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-            font-size: 0.9em;
-            display: none; /* Inizialmente nascosto */
-            z-index: 1000;
-            max-width: 90%;
-            text-align: center;
-        }
-        .cookie-popup button {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-left: 10px;
-            transition: background-color 0.3s ease;
-        }
-        .cookie-popup button:hover {
-            background-color: #45a049;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GazaAction – Ogni ricerca fa la differenza</title>
+  <meta name="description" content="Cerca sul web con GazaAction: gli introiti pubblicitari vengono donati in beneficenza." />
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; padding:0; }
+    header { padding:10px 20px; background:#e8f1ec; display:flex; justify-content:space-between; }
+    .logo { font-weight:bold; color:#2f7c6e; }
+    nav a { margin:0 10px; text-decoration:none; color:#333; }
+    .hero { padding:40px 20px; text-align:center; }
+    .search-box { margin:20px auto; max-width:600px; }
+    footer { padding:20px; text-align:center; font-size:14px; color:#555; }
+    #cookie {position:fixed;bottom:10px;left:10px;right:10px;background:#fff;padding:15px;border:1px solid #ccc;display:none;}
+    #cookie button{margin-left:10px;}
+  </style>
 </head>
 <body>
-    <div class="background-image"></div>
-    <div class="overlay"></div>
-
-    <header>
-        <a href="/" class="logo">Gaza<span style="color:#E0E0E0;">Action</span></a>
-    </header>
-
-    <main>
-        <div class="cse-container">
-            <gcse:searchbox-only></gcse:searchbox-only>
-            
-            </div>
-        
-        <p class="impact-text">
-            Every search is an <span class="highlight">action</span>. Use Gaza Action to search the web and generate funds for humanitarian support.
-        </p>
-    </main>
-
-    <footer>
-        <a href="#about">About Us</a>
-        <a href="#impact">Our Impact</a>
-        <a href="#privacy">Privacy Policy</a>
-        <a href="#contact">Contact</a>
-    </footer>
-
-    <div class="cookie-popup" id="cookiePopup">
-        Questo sito utilizza i cookie per l'analisi (Google Analytics) e la pubblicità (Google CSE). Cliccando su "Accetta" acconsenti al loro utilizzo.
-        <button onclick="acceptCookies()">Accetta</button>
+  <header>
+    <div class="logo">GAZA ACTION</div>
+    <nav>
+      <a href="#about">Chi Siamo</a>
+      <a href="#partners">Partner</a>
+      <a href="#resources">Risorse</a>
+    </nav>
+  </header>
+  <section class="hero">
+    <h1>Ogni ricerca fa la differenza</h1>
+    <div class="search-box">
+      <div class="gcse-searchbox-only" data-enableAutoComplete="true"></div>
     </div>
+    <p>Cerca su GazaAction e aiuta</p>
+  </section>
+  <section id="about" style="padding:20px;">
+    <h2>Come funziona</h2>
+    <p>Le tue ricerche generano introiti pubblicitari tramite Google CSE. Il 100% viene donato.</p>
+  </section>
+  <section id="partners" style="padding:20px;">
+    <h2>Supporta anche facendo acquisti</h2>
+    <p><a href="#">Amazon</a> | <a href="#">Booking</a> | <a href="#">eBay</a> | <a href="#">Zalando</a></p>
+  </section>
+  <footer id="resources">
+    <p>© <span id="year"></span> GazaAction</p>
+  </footer>
 
-    <script>
-        // Funzione per mostrare il pop-up e impostare il cookie
-        function checkCookie() {
-            // Controlla se l'utente ha già accettato i cookie
-            if (localStorage.getItem('cookiesAccepted') !== 'true') {
-                document.getElementById('cookiePopup').style.display = 'block';
-            }
-        }
+  <div id="cookie">
+    Usiamo cookie per analisi e ricerca personalizzata. Accetti?
+    <button id="cookieAccept">Accetta</button>
+    <button id="cookieReject">Rifiuta</button>
+  </div>
 
-        // Funzione per accettare i cookie
-        function acceptCookies() {
-            localStorage.setItem('cookiesAccepted', 'true');
-            document.getElementById('cookiePopup').style.display = 'none';
-        }
-
-        // Mostra il pop-up quando la pagina è caricata
-        window.onload = checkCookie;
-    </script>
+  <script>
+    document.getElementById('year').textContent=new Date().getFullYear();
+    const banner=document.getElementById('cookie');
+    const k='consent';const c=localStorage.getItem(k);
+    function loadGA(){var s=document.createElement('script');s.async=true;
+      s.src='https://www.googletagmanager.com/gtag/js?id=G-TP3S3CX0L4';document.head.appendChild(s);
+      window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.gtag=gtag;
+      gtag('js',new Date());gtag('config','G-TP3S3CX0L4');}
+    function loadCSE(){var s=document.createElement('script');s.async=true;
+      s.src='https://cse.google.com/cse.js?cx=e36db80eb79a24fd4';document.head.appendChild(s);}
+    if(c==='yes'){loadGA();loadCSE();}else if(c!=='no'){banner.style.display='block';}
+    document.getElementById('cookieAccept').onclick=()=>{localStorage.setItem(k,'yes');banner.remove();loadGA();loadCSE();};
+    document.getElementById('cookieReject').onclick=()=>{localStorage.setItem(k,'no');banner.remove();};
+  </script>
 </body>
 </html>
