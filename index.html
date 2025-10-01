@@ -1,96 +1,203 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gaza Action - Ogni ricerca fa la differenza</title>
-
-    <link rel="stylesheet" href="style.css"> 
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TP3S3CX0L4"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-TP3S3CX0L4');
-    </script>
-
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GazaAction – Ogni ricerca fa la differenza</title>
+  <meta name="description" content="Cerca su GazaAction: gli introiti pubblicitari delle ricerche vengono donati." />
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <style>
+    :root{
+      --ink:#1a2530; --muted:#5f6b76; --brand:#2f7c6e; --accent:#3aa984;
+      --line:#e4e9e7; --card:#ffffff; --gray:#eef2f1;
+      --shadow:0 10px 30px rgba(0,0,0,.15);
+    }
+    *{box-sizing:border-box} html,body{height:100%}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:#f7f9f8;}
+    .container{width:min(1120px,92vw);margin:0 auto;}
+    /* NAV */
+    header{position:sticky;top:0;z-index:40;background:#ffffffcc;backdrop-filter:saturate(140%) blur(6px);border-bottom:1px solid var(--line);}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;}
+    .logo{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:.25px}
+    .logo .word1{color:#1e2c38} .logo .word2{color:#2f7c6e}
+    .menu{display:flex;gap:32px;align-items:center;font-weight:700}
+    .menu a{position:relative;text-decoration:none;color:#1e2c38;opacity:.95}
+    .menu a::after{content:"";position:absolute;left:0;right:0;bottom:-10px;height:3px;background:#2f7c6e;border-radius:2px;opacity:0;transform:scaleX(.3);transition:.2s}
+    .menu a.active::after{opacity:1;transform:none}
+    .divider{width:1px;height:18px;background:#8b9aa6;opacity:.5}
+    .lang select{border:1px solid #d6e5e0;padding:6px 10px;border-radius:10px;background:#fff}
+    /* HERO */
+    .hero{position:relative;min-height:360px;display:flex;align-items:flex-end}
+    .hero::before{content:"";position:absolute;inset:0;background:url('assets/hero.png') center/cover no-repeat;}
+    .hero .inner{position:relative;z-index:1;width:100%;padding:40px 0 26px}
+    .hero h1{font-size:clamp(22px,3.6vw,40px);text-align:center;margin:0 0 18px;font-weight:900;color:#22303c;text-shadow:0 1px 0 rgba(255,255,255,.5)}
+    /* Search box like screenshot */
+    .search-wrap{display:flex;justify-content:center}
+    .search-card{display:flex;align-items:center;gap:0;background:#fff;border-radius:14px;padding:0;border:1px solid #dbe7e3;box-shadow:0 12px 26px rgba(0,0,0,.16);width:min(820px,92vw);}
+    .search-slot{flex:1;padding:10px 12px}
+    /* Attempt to make CSE input large */
+    .gsc-control-cse{padding:0;border:none;background:transparent}
+    input.gsc-input{height:56px!important;font-size:20px!important;border-radius:12px!important}
+    .gsc-search-button{height:56px!important}
+    .magnifier{width:70px;height:56px;background:#e7eaeb;display:flex;align-items:center;justify-content:center;border-top-right-radius:14px;border-bottom-right-radius:14px;border-left:1px solid #dbe7e3}
+    .magnifier svg{width:26px;height:26px;opacity:.9}
+    .hint{text-align:center;color:#3b4650;font-size:22px;font-weight:800;margin:12px 0 0;opacity:.9}
+    /* CONTENT CARD */
+    .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px;box-shadow:0 6px 16px rgba(0,0,0,.06)}
+    /* HOW */
+    .how{background:#f4f5f4;border-top:1px solid var(--line)}
+    .section{padding:36px 0}
+    .how h2{margin:0 0 16px;font-size:24px}
+    .how .row{display:grid;grid-template-columns:1fr;gap:18px}
+    @media(min-width:800px){.how .row{grid-template-columns: 1fr 60px 1fr}}
+    .step{display:flex;gap:12px;align-items:flex-start}
+    .step svg{width:32px;height:32px;color:#2f7c6e}
+    .muted{color:#7a848e}
+    .hr{height:1px;background:#dfe5e3;margin:16px 0}
+    /* Partners */
+    .partners h3{margin:6px 0 16px;font-size:20px}
+    .shops{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    @media(min-width:800px){.shops{grid-template-columns:repeat(4,1fr)}}
+    .shop{display:flex;align-items:center;justify-content:center;height:64px;border-radius:12px;border:1px solid #e9eeec;background:#eef5f1;box-shadow:inset 0 -2px 0 rgba(0,0,0,.05);font-weight:900;text-decoration:none;color:#0f5132}
+    .shop.booking{background:#1db954;color:#fff} /* placeholder look */
+    footer{border-top:1px solid var(--line);padding:28px 0 60px;color:#6a757f;font-size:14px}
+    /* Cookie banner */
+    .cookie{position:fixed;left:14px;right:14px;bottom:14px;background:#fff;border:1px solid #dfe9e5;box-shadow:0 14px 34px rgba(15,50,40,.18);border-radius:16px;padding:16px;display:none;z-index:60}
+    .cookie.show{display:block}
+    .cookie .row{display:flex;gap:16px;align-items:center}
+    .btn{border:1px solid transparent;background:#3aa984;color:#fff;padding:10px 16px;border-radius:12px;cursor:pointer;font-weight:800}
+    .btn.alt{background:#fff;color:#2f7c6e;border-color:#2f7c6e}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  </style>
 </head>
 <body>
-
-    <div id="cookie-popup" class="cookie-popup">
-        <p>Utilizziamo i cookie per migliorare la tua esperienza. Acconsenti all'uso? <button onclick="accettaCookie()">Accetto</button></p>
+  <header>
+    <div class="container nav">
+      <div class="logo"><span class="word1">GAZA</span> <span class="word2">ACTION</span></div>
+      <div class="menu">
+        <a href="#about" class="active" data-i18n="nav_about">Chi Siamo</a>
+        <div class="divider"></div>
+        <a href="#partners" data-i18n="nav_partners">Partner</a>
+        <div class="divider"></div>
+        <a href="#resources" data-i18n="nav_resources">Risorse</a>
+      </div>
+      <div class="lang">
+        <label for="langSel" class="sr-only">Lingua</label>
+        <select id="langSel">
+          <option value="auto">Auto</option>
+          <option value="it">Italiano</option>
+          <option value="en">English</option>
+        </select>
+      </div>
     </div>
-    
-    <header class="hero-section">
-        <div class="header-bar">
-            <div class="logo">
-                <img src="Gemini_Generated_Image_30io5230io5230io.jpg" alt="Logo Gaza Action">
-            </div>
-            
-            <nav class="main-nav">
-                <a href="#chi-siamo">Chi Siamo</a>
-                <a href="#partner">Partner</a>
-                <a href="#risorse">Risorse</a>
-                <div id="language-switcher">IT | EN | AR </div>
-            </nav>
+  </header>
+
+  <section class="hero">
+    <div class="inner container">
+      <h1 class="hint" data-i18n="hero_title">Ogni reeircha fa la differenca</h1>
+      <div class="search-wrap">
+        <div class="search-card">
+          <div class="search-slot">
+            <!-- Google CSE searchbox -->
+            <div class="gcse-searchbox-only" data-enableAutoComplete="true"></div>
+          </div>
+          <div class="magnifier" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </div>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="search-area">
-            <h1>Ogni ricerca fa la differenza</h1>
-            
-            <div class="gcse-searchbox-only" data-resultsUrl="risultati.html" data-queryParameterName="searchQuery"></div>
+  <section class="section how" id="about">
+    <div class="container card">
+      <h2 data-i18n="how_title">Come Funziona</h2>
+      <div class="row">
+        <div class="step">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <div>
+            <p data-i18n="how_1">Le tue ricerche generano introiti pubblicitari da Google CSE.</p>
+            <p class="muted" data-i18n="how_small1">Le tue ricerche generano introiti pubblicitari da Google CSE. Il 100% viene donato.</p>
+          </div>
         </div>
-    </header>
-
-    <section class="how-it-works">
-        <h2>Come Funziona</h2>
-        <div class="flow-icons">
-            <div class="step">
-                <span class="icon-lente">🔍</span>
-                <p>Le tue ricerche</p>
-            </div>
-            <span class="arrow">→</span>
-            <div class="step">
-                 <span class="icon-pubblicita">→</span>
-                <p>generano introiti pubblicitari da Google CSE.</p>
-            </div>
-            <span class="arrow">→</span>
-            <div class="step">
-                <span class="icon-cuore">🤍</span>
-                <p>Il 100% viene donato.</p>
-            </div>
+        <div class="step" aria-hidden="true" style="justify-content:center;align-items:center">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
         </div>
-    </section>
-
-    <section class="affiliates-section">
-        <h2>Supporta anche facendo acquisti</h2>
-        <div class="affiliate-cards">
-            <button class="affiliate-btn amazon-btn">Acquista su Amazon e Dona</button>
-            <button class="affiliate-btn booking-btn">Booking.com</button>
-            <button class="affiliate-btn ebay-btn">eBay</button>
-            <button class="affiliate-btn zalando-btn">Zalando e Dona</button>
+        <div class="step">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 1 0 7.78L12 21.23l-8.84-8.84a5.5 5.5 0 0 1 7.78-7.78L12 5.41l1.06-1.06a5.5 5.5 0 0 1 7.78 0Z"/></svg>
+          <p data-i18n="how_2">Il 100% del ricavato viene donato a progetti umanitari.</p>
         </div>
-    </section>
+      </div>
+      <div class="hr"></div>
+      <h3 data-i18n="partners_title">Supporta anche facendo aquisits</h3>
+      <div class="shops">
+        <a class="shop" href="#" data-i18n="shop_amazon">Acquista su Amazon e Dona</a>
+        <a class="shop booking" href="#" data-i18n="shop_booking">Booking.com</a>
+        <a class="shop" href="#" data-i18n="shop_ebay">eBay</a>
+        <a class="shop" href="#" data-i18n="shop_zalando">Zalando e Donis</a>
+      </div>
+    </div>
+  </section>
 
-    <footer>
-        <p>Copyright 2024 Gaza Action</p>
-        <p><a href="#">Trasparenza & FAQ</a></p>
-    </footer>
+  <footer id="resources">
+    <div class="container">
+      <p data-i18n="footer_copy">© <span id="y"></span> GazaAction. Tutti i diritti riservati.</p>
+    </div>
+  </footer>
 
-    <script async src="https://cse.google.com/cse.js?cx=e36db80eb79a24fd4"></script>
+  <!-- COOKIE BANNER -->
+  <div id="cookie" class="cookie" role="dialog" aria-live="polite" aria-label="Cookie banner">
+    <div class="row">
+      <p data-i18n="cookie_msg">Usiamo cookie per analisi e per caricare la ricerca personalizzata. Accetti?</p>
+      <div style="display:flex;gap:10px">
+        <button class="btn alt" id="cookieReject" data-i18n="cookie_reject">Rifiuta</button>
+        <button class="btn" id="cookieAccept" data-i18n="cookie_accept">Accetta</button>
+      </div>
+    </div>
+  </div>
 
-    <script>
-        function accettaCookie() {
-            document.getElementById('cookie-popup').style.display = 'none';
-            // Qui andrebbe la logica per salvare la preferenza cookie (es. localStorage)
-        }
-        
-        // Logica PLACEHOLDER per visualizzare il pop-up
-        window.onload = function() {
-            // Se l'utente non ha ancora accettato, mostra il pop-up:
-            // document.getElementById('cookie-popup').style.display = 'flex'; 
-        };
-    </script>
+  <script>
+    // i18n
+    const i18n = {
+      it:{nav_about:"Chi Siamo",nav_partners:"Partner",nav_resources:"Risorse",
+          hero_title:"Ogni reeircha fa la differenca",
+          how_title:"Come Funziona",how_1:"Le tue ricerche generano introiti pubblicitari da Google CSE.",how_small1:"Le tue ricerche generano introiti pubblicitari da Google CSE. Il 100% viene donato.",how_2:"Il 100% del ricavato viene donato a progetti umanitari.",
+          partners_title:"Supporta anche facendo aquisits",
+          shop_amazon:"Acquista su Amazon e Dona",shop_booking:"Booking.com",shop_ebay:"eBay",shop_zalando:"Zalando e Donis",
+          footer_copy:"© {y} GazaAction. Tutti i diritti riservati.",
+          cookie_msg:"Usiamo cookie per analisi e per caricare la ricerca personalizzata. Accetti?",cookie_accept:"Accetta",cookie_reject:"Rifiuta"},
+      en:{nav_about:"About",nav_partners:"Partners",nav_resources:"Resources",
+          hero_title:"Every search makes a difference",
+          how_title:"How it works",how_1:"Your searches generate ad revenue via Google CSE.",how_small1:"Your searches generate ad revenue via Google CSE. 100% is donated.",how_2:"100% of proceeds are donated to humanitarian projects.",
+          partners_title:"Also support by shopping",
+          shop_amazon:"Shop on Amazon & Donate",shop_booking:"Booking.com",shop_ebay:"eBay",shop_zalando:"Zalando & Donis",
+          footer_copy:"© {y} GazaAction. All rights reserved.",
+          cookie_msg:"We use cookies for analytics and to load the custom search. Do you accept?",cookie_accept:"Accept",cookie_reject:"Decline"}
+    };
+    const els = document.querySelectorAll('[data-i18n]');
+    const langSel = document.getElementById('langSel');
+    const yearEl = document.getElementById('y');
+    yearEl.textContent = new Date().getFullYear();
+    function pickLang(){ const chosen=langSel.value; if(chosen!=='auto') return chosen; const n=(navigator.language||'it').slice(0,2); return ['it','en'].includes(n)?n:'en'; }
+    function applyLang(){ const L=pickLang(); const dict=i18n[L]; els.forEach(el=>{ const key=el.getAttribute('data-i18n'); let txt=dict[key]||el.textContent; if(key==='footer_copy') txt=txt.replace('{y}', new Date().getFullYear()); el.textContent=txt; }); document.documentElement.lang=L; }
+    langSel.addEventListener('change', applyLang); applyLang();
+
+    // Cookie consent (gates GA & CSE)
+    const cookieBanner = document.getElementById('cookie');
+    const COOKIE_KEY = 'ga_cookie_consent_v1';
+    function showCookie(){ cookieBanner.classList.add('show'); }
+    function hideCookie(){ cookieBanner.classList.remove('show'); }
+    function hasConsent(){ return localStorage.getItem(COOKIE_KEY) === 'yes'; }
+    document.getElementById('cookieAccept').addEventListener('click', ()=>{ localStorage.setItem(COOKIE_KEY,'yes'); hideCookie(); loadGA(); loadCSE(); });
+    document.getElementById('cookieReject').addEventListener('click', ()=>{ localStorage.setItem(COOKIE_KEY,'no'); hideCookie(); });
+    if(hasConsent()) { loadGA(); loadCSE(); } else { showCookie(); }
+
+    function loadGA(){ if(window.__gaLoaded) return; window.__gaLoaded=true;
+      const s1=document.createElement('script'); s1.async=true; s1.src='https://www.googletagmanager.com/gtag/js?id=G-TP3S3CX0L4'; document.head.appendChild(s1);
+      window.dataLayer=window.dataLayer||[]; function gtag(){dataLayer.push(arguments);} window.gtag=gtag;
+      gtag('js', new Date()); gtag('config','G-TP3S3CX0L4', { anonymize_ip:true }); }
+    function loadCSE(){ if(window.__cseLoaded) return; window.__cseLoaded=true;
+      const cx='e36db80eb79a24fd4'; const s=document.createElement('script'); s.type='text/javascript'; s.async=true; s.src='https://cse.google.com/cse.js?cx='+encodeURIComponent(cx); document.head.appendChild(s); }
+  </script>
 </body>
 </html>

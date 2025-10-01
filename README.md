@@ -1,13 +1,11 @@
-# GazaAction Landing Page
+# GazaAction Landing Page (replica screenshot)
 
-Questa è una semplice pagina HTML statica con:
+Contenuto:
+- `index.html` con layout identico allo screenshot (navbar, hero con immagine, box di ricerca con ombra, sezione “Come Funziona”, card partner)
+- `assets/hero.png` (grafica fornita)
+- GA4: G-TP3S3CX0L4 — caricato solo dopo consenso
+- Google CSE: e36db80eb79a24fd4 — caricato solo dopo consenso
+- i18n IT/EN con auto-detect e selettore in header
+- Banner cookie con salvataggio preferenza su `localStorage`
 
-- Google Analytics 4 (G-TP3S3CX0L4)
-- Google Custom Search Engine (cx: e36db80eb79a24fd4)
-- Banner cookie che carica GA e CSE solo dopo consenso
-
-## Pubblicazione su GitHub Pages
-1. Crea un nuovo repository.
-2. Carica `index.html` e questo `README.md`.
-3. Vai su Settings → Pages → abilita GitHub Pages sulla branch principale.
-4. L'URL sarà `https://<username>.github.io/<repo>/`.
+Pubblicazione: caricare l’intera cartella (inclusa `assets/`) su hosting statico o GitHub Pages.
