@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaza Action - Centro Ricerca</title>
+    <link rel="stylesheet" href="styles.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TP3S3CX0L4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-TP3S3CX0L4');
+    </script>
+</head>
+<body>
+    
+    <header>
+        <div class="container header-content">
+            <h1 class="logo">Gaza Action</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Chi siamo</a></li>
+                    <li><a href="#">Partner</a></li>
+                    <li><a href="#">Risorse</a></li>
+                    <li><a href="search-results.html">Ricerca</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="minimal-hero-section">
+            <div class="container hero-center-content">
+                <h2>Gaza Action</h2>
+                <p class="tagline">be a part of the change</p>
+
+                <form class="search-form-center" action="search-results.html" method="GET">
+                    <input type="text" name="q" placeholder="Cerca e sostieni Gaza..." required>
+                    <button type="submit" class="search-button-center">
+                        <i class="fas fa-search"></i> Cerca
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <section class="stats-section">
+            <div class="stats-box">
+                <p>Ricerche effettuate</p>
+                <p class="number">12.345</p>
+            </div>
+        </section>
+
+        <section class="main-content-cards">
+            <div class="container card-grid">
+                
+                <div class="card">
+                    <div class="icon-circle"><i class="fas fa-heart"></i></div>
+                    <h3>Chi siamo</h3>
+                    <p>La nostra missione e il nostro impegno per aiutare Gaza nel lungo termine.</p>
+                </div>
+
+                <div class="card">
+                    <div class="icon-circle"><i class="fas fa-users"></i></div>
+                    <h3>Partner</h3>
+                    <p>Organizzazioni e aziende che sostengono il progetto.</p>
+                </div>
+
+                <div class="card">
+                    <div class="icon-circle"><i class="fas fa-book-open"></i></div>
+                    <h3>Risorse utili</h3>
+                    <p>Link, articoli e strumenti per chi vuole supportare Gaza (Skimlinks e altri)</p>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <p><i class="fas fa-globe"></i> Gaza Action</p>
+        </div>
+    </footer>
+    
+</body>
+</html>
