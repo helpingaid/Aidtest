@@ -259,7 +259,7 @@ footer i {
 .gsc-control-cse .gsc-webResult .gsc-result .gs-title * {
     /* Colore blu standard di Google */
     color: #1a0dab !important;
-    font-size: 1.4em !important; /* DIMENSIONE AUMENTATA per visibilità */
+    font-size: 2.4em !important; /* DIMENSIONE AUMENTATA per visibilità */
     font-weight: 500 !important; 
     text-decoration: none !important;
 }
@@ -278,7 +278,7 @@ footer i {
 .gsc-control-cse .gsc-webResult .gsc-url-top * {
     /* Colore verde/grigio scuro di Google */
     color: #006621 !important;
-    font-size: 1.0em !important; /* DIMENSIONE AUMENTATA */
+    font-size: 2.0em !important; /* DIMENSIONE AUMENTATA */
     font-style: normal !important;
 }
 
@@ -287,7 +287,7 @@ footer i {
     /* Colore grigio scuro di Google */
     color: #4d5156 !important;
     line-height: 1.4 !important;
-    font-size: 1.1em !important; /* DIMENSIONE AUMENTATA per una migliore lettura */
+    font-size: 2.1em !important; /* DIMENSIONE AUMENTATA per una migliore lettura */
     font-weight: 400 !important;
 }
 
@@ -325,3 +325,4 @@ footer i {
     font-weight: 700 !important; 
     color: #2c3e50 !important; 
 }
+
