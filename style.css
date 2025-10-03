@@ -1,191 +1,243 @@
-/* Stile Generale */
+/* STILI GENERALI E RESET */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f8f8f8; 
     color: #333;
-    background-color: #f7f7f7; /* Colore sotto la linea di separazione */
-    text-align: center;
 }
 
-/* --- 1. HEADER / SEZIONE HERO --- */
-.hero-section {
-    /* **SOSTITUISCI** con il tuo sfondo file */
-    background-image: url('background.jpg'); 
-    background-size: cover;
-    background-position: center bottom;
-    padding-bottom: 20px; 
-    position: relative;
-    /* La riga di separazione in questo layout è la fine dell'immagine di sfondo */
-    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.05);
-}
-
-.header-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 5%;
+.container {
+    width: 90%;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.logo img {
-    height: 40px; 
+/* --- HEADER SCURO --- */
+header {
+    background-color: #2c3e50; 
+    position: relative;
+    width: 100%;
+    z-index: 10;
+    padding: 15px 0; 
 }
 
-.main-nav a {
-    margin-left: 20px;
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li a {
+    color: white;
     text-decoration: none;
-    color: #008080; /* Colore Verde-Acqua per il menu */
-    font-weight: bold;
-    font-size: 1.1em;
+    margin-left: 25px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.3s;
 }
 
-/* Area Ricerca */
-.search-area {
-    padding: 60px 5% 70px; /* Spazio per centrare verticalmente */
+nav ul li a:hover {
+    color: #00bcd4;
+}
+
+/* --- SEZIONE HERO MINIMALE (Contiene Titoli e Ricerca) --- */
+.minimal-hero-section {
+    background-color: #f8f8f8; 
+    padding: 30px 0 0; 
     text-align: center;
 }
 
-.search-area h1 {
-    font-size: 1.8em;
-    margin-bottom: 30px;
-    color: #004040; /* Colore scuro per il titolo */
-    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.6);
+.hero-center-content h2 {
+    font-size: 48px;
+    margin-bottom: 5px;
+    color: #2c3e50;
 }
 
-.search-box-container {
+.tagline {
+    font-size: 18px;
+    margin-bottom: 40px;
+    font-weight: 500;
+    color: #666;
+}
+
+/* BARRA DI RICERCA CENTRALE (Grafica custom) */
+.search-form-center {
     display: flex;
-    margin: 0 auto;
-    max-width: 650px;
+    width: 650px;
+    max-width: 90%;
+    /* Margine standard per separare dalla sezione successiva */
+    margin: 0 auto 50px; 
     background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 6px;
     overflow: hidden;
-    border: 1px solid #ddd; /* Bordo neutro */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.search-box-container input {
+.search-form-center input[type="text"] {
     flex-grow: 1;
-    border: none;
     padding: 15px 20px;
-    font-size: 1.1em;
+    border: none;
+    font-size: 16px;
     outline: none;
     color: #333;
 }
 
-.search-box-container button {
-    background-color: #f0f0f0; /* Colore neutro per il bottone */
+.search-button-center {
+    background-color: #00bcd4;
+    color: white;
     border: none;
-    padding: 15px 20px;
+    padding: 15px 25px;
     cursor: pointer;
-    font-size: 1.2em;
-    color: #555;
-    transition: background-color 0.2s;
+    font-size: 16px;
+    font-weight: 700;
+    transition: background-color 0.3s;
 }
 
-.search-box-container button:hover {
-    background-color: #e0e0e0;
+.search-button-center:hover {
+    background-color: #00a0b8;
 }
 
-
-/* --- 2. SEZIONE 'COME FUNZIONA' --- */
-.how-it-works {
-    background-color: #f7f7f7;
-    padding: 30px 5%; /* Spazio leggermente ridotto */
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.how-it-works h2 {
-    color: #004040;
-    margin-bottom: 25px;
-}
-
-.flow-icons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-}
-
-.step img {
-    height: 35px; /* Dimensione delle icone */
-    margin-bottom: 8px;
-}
-
-.explanation {
-    font-size: 0.9em;
-    color: #666;
-    max-width: 350px;
-    margin: 10px auto 0;
-    line-height: 1.4;
-}
-
-.arrow {
-    font-size: 1.5em;
-    color: #004040;
-    margin: 0 10px;
-    font-weight: bold;
-}
-
-
-/* --- 3. SEZIONE AFFILIATI --- */
-.affiliates-section {
-    padding: 40px 5% 60px;
+/* --- SEZIONE STATISTICHE (Ristabilita con margini standard) --- */
+.stats-section {
+    /* Rimosso posizionamento aggressivo */
+    padding-top: 20px; 
+    padding-bottom: 50px;
     text-align: center;
 }
 
-.affiliates-section h2 {
-    font-size: 1.4em;
-    color: #555;
-    margin-bottom: 25px;
+.stats-box {
+    /* Rimosso position: relative e top: -50px */
+    /* Rimosso margine negativo */
+    margin: 0 auto; 
+    
+    background-color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 250px;
+    max-width: 90%;
+    padding: 20px 0;
+    z-index: 5;
 }
 
-.affiliate-cards {
+.stats-box p {
+    margin: 5px 0;
+}
+
+.stats-box .number {
+    font-size: 36px;
+    font-weight: 700;
+    color: #00bcd4;
+}
+
+/* --- SEZIONE CARD PRINCIPALI (Ristabilita con margini standard) --- */
+.main-content-cards {
+    /* Spazio tra stats box e card */
+    padding-top: 30px; 
+    padding-bottom: 80px;
+}
+
+.card-grid {
     display: flex;
     justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-    max-width: 900px;
-    margin: 0 auto;
+    gap: 30px;
 }
 
-.affiliate-btn {
-    padding: 12px 20px;
-    border: none;
-    border-radius: 6px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    min-width: 150px;
-    text-decoration: none;
-    display: inline-block;
+.card {
+    flex-basis: 30%;
+    min-width: 250px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border: 1px solid #eee; 
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* Colori dei pulsanti */
-.amazon-btn, .zalando-btn {
-    background-color: #5cb85c; /* Verde Accento */
-    color: white;
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-.booking-btn {
-    background-color: #003580; /* Blu Booking */
-    color: white;
+.icon-circle {
+    background-color: #e6f7f9; 
+    color: #00bcd4;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    margin: 0 auto 15px;
 }
 
-.ebay-btn {
-    background-color: #fcfcfc; /* Quasi bianco per eBay */
+.card h3 {
+    font-size: 18px;
+    margin-top: 0;
     color: #333;
-    border: 1px solid #ddd;
+}
+
+.card p {
+    font-size: 14px;
+    color: #666;
 }
 
 /* --- FOOTER --- */
 footer {
-    padding: 15px 5%;
-    background-color: #333;
+    background-color: #2c3e50; 
     color: white;
-    font-size: 0.8em;
-    display: flex;
-    justify-content: space-between;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer i {
+    margin-right: 5px;
+}
+
+/* MEDIA QUERY per Responsività */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+    }
+    nav ul {
+        margin-top: 10px;
+    }
+    nav ul li a {
+        margin: 0 10px;
+    }
+    .search-form-center {
+        width: 100%;
+    }
+    .card-grid {
+        flex-direction: column;
+        gap: 20px;
+    }
+    /* Rimosso posizionamento complesso nel mobile */
+    .stats-box {
+        margin: 0 auto;
+    }
+    .main-content-cards {
+        padding-top: 30px; 
+    }
 }
