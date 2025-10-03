@@ -80,7 +80,6 @@ nav ul li a:hover {
     display: flex;
     width: 650px;
     max-width: 90%;
-    /* Margine standard per separare dalla sezione successiva */
     margin: 0 auto 50px; 
     background-color: white;
     border-radius: 6px;
@@ -112,19 +111,15 @@ nav ul li a:hover {
     background-color: #00a0b8;
 }
 
-/* --- SEZIONE STATISTICHE (Ristabilita con margini standard) --- */
+/* --- SEZIONE STATISTICHE (Stabile) --- */
 .stats-section {
-    /* Rimosso posizionamento aggressivo */
     padding-top: 20px; 
     padding-bottom: 50px;
     text-align: center;
 }
 
 .stats-box {
-    /* Rimosso position: relative e top: -50px */
-    /* Rimosso margine negativo */
     margin: 0 auto; 
-    
     background-color: white;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
@@ -144,9 +139,8 @@ nav ul li a:hover {
     color: #00bcd4;
 }
 
-/* --- SEZIONE CARD PRINCIPALI (Ristabilita con margini standard) --- */
+/* --- SEZIONE CARD PRINCIPALI (Stabile) --- */
 .main-content-cards {
-    /* Spazio tra stats box e card */
     padding-top: 30px; 
     padding-bottom: 80px;
 }
@@ -233,7 +227,6 @@ footer i {
         flex-direction: column;
         gap: 20px;
     }
-    /* Rimosso posizionamento complesso nel mobile */
     .stats-box {
         margin: 0 auto;
     }
