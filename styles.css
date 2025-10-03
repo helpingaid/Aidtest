@@ -241,3 +241,56 @@ footer i {
         padding-top: 30px; 
     }
 }
+
+/* ================================================= */
+/* STILI AGGIUNTIVI PER GOOGLE CUSTOM SEARCH (CSE)   */
+/* Obiettivo: Adottare i colori e le dimensioni di   */
+/* Google, mantenendo il font 'Montserrat' del sito. */
+/* ================================================= */
+
+/* 1. Contenitore Generale e Font */
+.gsc-control-cse,
+.gsc-control-cse .gsc-table-result {
+    font-family: 'Montserrat', sans-serif !important;
+    background-color: transparent !important; /* Assicura che si adatti allo sfondo del tuo sito */
+}
+
+/* 2. Stile del TITOLO (Link principale) */
+.gsc-control-cse .gsc-webResult .gsc-result .gs-title,
+.gsc-control-cse .gsc-webResult .gsc-result .gs-title * {
+    /* Blu standard di Google per i link non visitati (#1a0dab) */
+    color: #1a0dab !important;
+    font-size: 1.15em !important; 
+    font-weight: 500 !important; 
+    text-decoration: none !important;
+}
+
+/* Stile del titolo quando è stato visitato (Viola standard di Google) */
+.gsc-control-cse .gsc-webResult .gsc-result .gs-title a:visited {
+    color: #609 !important;
+}
+
+.gsc-control-cse .gsc-webResult .gsc-result .gs-title a:hover {
+    text-decoration: underline !important;
+}
+
+/* 3. Stile dell'URL (Percorso) */
+.gsc-control-cse .gsc-webResult .gsc-url-top,
+.gsc-control-cse .gsc-webResult .gsc-url-top * {
+    /* Verde/Grigio scuro standard di Google per l'URL (#006621) */
+    color: #006621 !important;
+    font-size: 0.85em !important; 
+    font-style: normal !important;
+}
+
+/* 4. Stile dello SNIPPET (Descrizione del risultato) */
+.gsc-control-cse .gsc-webResult .gsc-result .gs-snippet {
+    /* Grigio scuro per lo snippet (#4d5156) */
+    color: #4d5156 !important;
+    line-height: 1.4 !important; 
+    font-size: 0.95em !important; 
+    font-weight: 400 !important;
+}
+
+/* 5. Separazione e Bordi dei Risultati */
+.gsc-control-cse .gsc-table-
