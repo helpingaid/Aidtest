@@ -243,29 +243,28 @@ footer i {
 }
 
 /* ================================================= */
-/* STILI AGGIUNTIVI PER GOOGLE CUSTOM SEARCH (CSE)   */
-/* Obiettivo: Adottare i colori e le dimensioni di   */
-/* Google, mantenendo il font 'Montserrat' del sito. */
+/* STILI PER GOOGLE CUSTOM SEARCH (CSE) MODIFICATI   */
+/* Colori di Google, Font 'Montserrat', Caratteri ingranditi. */
 /* ================================================= */
 
 /* 1. Contenitore Generale e Font */
 .gsc-control-cse,
 .gsc-control-cse .gsc-table-result {
     font-family: 'Montserrat', sans-serif !important;
-    background-color: transparent !important; /* Assicura che si adatti allo sfondo del tuo sito */
+    background-color: transparent !important; 
 }
 
 /* 2. Stile del TITOLO (Link principale) */
 .gsc-control-cse .gsc-webResult .gsc-result .gs-title,
 .gsc-control-cse .gsc-webResult .gsc-result .gs-title * {
-    /* Blu standard di Google per i link non visitati (#1a0dab) */
+    /* Colore blu standard di Google */
     color: #1a0dab !important;
-    font-size: 1.15em !important; 
+    font-size: 1.4em !important; /* DIMENSIONE AUMENTATA per visibilità */
     font-weight: 500 !important; 
     text-decoration: none !important;
 }
 
-/* Stile del titolo quando è stato visitato (Viola standard di Google) */
+/* Stile del titolo visitato */
 .gsc-control-cse .gsc-webResult .gsc-result .gs-title a:visited {
     color: #609 !important;
 }
@@ -277,20 +276,52 @@ footer i {
 /* 3. Stile dell'URL (Percorso) */
 .gsc-control-cse .gsc-webResult .gsc-url-top,
 .gsc-control-cse .gsc-webResult .gsc-url-top * {
-    /* Verde/Grigio scuro standard di Google per l'URL (#006621) */
+    /* Colore verde/grigio scuro di Google */
     color: #006621 !important;
-    font-size: 0.85em !important; 
+    font-size: 1.0em !important; /* DIMENSIONE AUMENTATA */
     font-style: normal !important;
 }
 
 /* 4. Stile dello SNIPPET (Descrizione del risultato) */
 .gsc-control-cse .gsc-webResult .gsc-result .gs-snippet {
-    /* Grigio scuro per lo snippet (#4d5156) */
+    /* Colore grigio scuro di Google */
     color: #4d5156 !important;
-    line-height: 1.4 !important; 
-    font-size: 0.95em !important; 
+    line-height: 1.4 !important;
+    font-size: 1.1em !important; /* DIMENSIONE AUMENTATA per una migliore lettura */
     font-weight: 400 !important;
 }
 
 /* 5. Separazione e Bordi dei Risultati */
-.gsc-control-cse .gsc-table-
+.gsc-control-cse .gsc-table-result {
+    border: none !important;
+    padding: 10px 0 !important;
+    margin: 0 !important;
+}
+
+/* Regola il testo delle statistiche */
+.gsc-result-info {
+    color: #666 !important;
+    font-size: 0.9em !important;
+    padding-bottom: 10px !important;
+}
+
+/* Stile per la paginazione */
+.gsc-cursor-box {
+    border-top: 1px solid #eee !important;
+    padding-top: 20px !important;
+}
+
+.gsc-cursor,
+.gsc-cursor-page {
+    font-size: 1em !important;
+    font-weight: 500 !important;
+}
+
+.gsc-cursor-page {
+    color: #1a0dab !important; 
+}
+
+.gsc-cursor-current-page {
+    font-weight: 700 !important; 
+    color: #2c3e50 !important; 
+}
