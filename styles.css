@@ -58,19 +58,30 @@ nav ul li a:hover, .active-page { /* Colore attivo e hover */
 /* --- SEZIONE HERO MINIMALE AL CENTRO (Contiene Titoli e Ricerca) --- */
 .minimal-hero-section {
     background-color: #e5fcfc; 
-    padding: 15px 0 0; 
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+}
+
+.hero-center-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
 }
 
 .hero-center-content h2 {
     font-size: 36px;
-    margin-bottom: 0;
+    margin: 0;
     color: #2c3e50;
 }
 
 .tagline {
     font-size: 16px;
-    margin-bottom: 20px;
+    margin: 0;
     font-weight: 500;
     color: #666;
 }
