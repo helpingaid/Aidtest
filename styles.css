@@ -102,9 +102,9 @@ nav ul li a:hover, .active-page { /* Colore attivo e hover */
 /* BARRA DI RICERCA CENTRALE (solo su index.html) */
 .search-form-center {
     display: flex;
-    width: 650px;
-    max-width: 90%;
-    margin: 0 auto 50px;
+    width: 1200px;
+    max-width: 95%;
+    margin: 0 auto;
     background-color: white;
     border-radius: 6px;
     overflow: hidden;
