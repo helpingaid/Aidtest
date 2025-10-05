@@ -100,10 +100,20 @@ nav ul li a:hover, .active-page { /* Colore attivo e hover */
 }
 
 /* BARRA DI RICERCA CENTRALE (solo su index.html) */
-.search-form-center {
-    display: flex;
-    width: 1200px;
-    max-width: 95%;
+.search-section {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.search-section .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gcse-searchbox {
+    width: 100%;
+    max-width: 1200px;
     margin: 0 auto;
     background-color: white;
     border-radius: 6px;
