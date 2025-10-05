@@ -89,15 +89,21 @@ nav ul li a:hover, .active-page { /* Colore attivo e hover */
 }
 
 /* BARRA DI RICERCA CENTRALE (solo su index.html) */
-.search-form-center {
+.search-section {
+    width: 100%;
+    margin-top: 20px;
     display: flex;
-    width: 650px;
-    max-width: 90%;
-    margin: 0 auto 50px;
-    background-color: white;
-    border-radius: 6px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+}
+
+.search-section .container {
+    width: 100%;
+    padding: 0;
+}
+
+.gcse-searchbox {
+    width: 100% !important;
+    max-width: 100% !important;
 }
 
 .search-form-center input[type="text"] {
