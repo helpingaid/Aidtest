@@ -58,30 +58,19 @@ nav ul li a:hover, .active-page { /* Colore attivo e hover */
 /* --- SEZIONE HERO MINIMALE AL CENTRO (Contiene Titoli e Ricerca) --- */
 .minimal-hero-section {
     background-color: #e5fcfc; 
-    height: 200px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    padding: 15px 0 0; 
     text-align: center;
-}
-
-.hero-center-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
 }
 
 .hero-center-content h2 {
     font-size: 36px;
-    margin: 0;
+    margin-bottom: 0;
     color: #2c3e50;
 }
 
 .tagline {
     font-size: 16px;
-    margin: 0;
+    margin-bottom: 20px;
     font-weight: 500;
     color: #666;
 }
@@ -100,21 +89,11 @@ nav ul li a:hover, .active-page { /* Colore attivo e hover */
 }
 
 /* BARRA DI RICERCA CENTRALE (solo su index.html) */
-.search-section {
-    width: 80%;
-    margin-top: 20px;
-}
-
-.search-section .container {
-    width: 80%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.gcse-searchbox {
-    width: 80%;
-    max-width: 1200px;
-    margin: 0 auto;
+.search-form-center {
+    display: flex;
+    width: 650px;
+    max-width: 90%;
+    margin: 0 auto 50px;
     background-color: white;
     border-radius: 6px;
     overflow: hidden;
@@ -641,5 +620,4 @@ footer i {
     .value-card {
         padding: 20px;
     }
-
 }
