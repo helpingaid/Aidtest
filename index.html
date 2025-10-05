@@ -4,18 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gaza Action - Centro Ricerca</title>
-    
-    <link rel="stylesheet" href="https://helpingaid.github.io/Aidtest/styles.css"> 
-    
+    <link rel="stylesheet" href="styles.css"> 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
+    
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TP3S3CX0L4"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-TP3S3CX0L4');
+    </script>
+    
+    <script>
+        function performSearch(event) {
+            event.preventDefault();
+            const query = document.getElementById('search-input').value;
+            const resultsDiv = document.getElementById('search-results');
+            
+            // Show loading state
+            resultsDiv.innerHTML = '<p>Ricerca in corso...</p>';
+            
+            // Perform the search using Google's API
+            fetch(`https://www.googleapis.com/customsearch/v1?key=YOUR_API_KEY&cx=a7dd1f714294e49b9&q=${encodeURIComponent(query)}`)
+                .then(response => response.json())
+                .then(data => {
+                    let resultsHtml = '<h2>Risultati della Ricerca</h2>';
+                    
+                    if (data.items && data.items.length > 0) {
+                        data.items.forEach(item => {
+                            resultsHtml += `
+                                <div class="search-result">
+                                    <h3><a href="${item.link}">${item.title}</a></h3>
+                                    <p>${item.snippet}</p>
+                                </div>
+                            `;
+                        });
+                    } else {
+                        resultsHtml += '<p>Nessun risultato trovato.</p>';
+                    }
+                    
+                    resultsDiv.innerHTML = resultsHtml;
+                })
+                .catch(error => {
+                    resultsDiv.innerHTML = '<p>Si è verificato un errore durante la ricerca.</p>';
+                    console.error('Search error:', error);
+                });
+        }
     </script>
 </head>
 <body>
@@ -29,7 +64,7 @@
                     <li><a href="#">Chi siamo</a></li>
                     <li><a href="#">Partner</a></li>
                     <li><a href="#">Risorse</a></li>
-                    <li><a href="search-results.html">Ricerca</a></li>
+                    ></li>
                 </ul>
             </nav>
         </div>
@@ -40,44 +75,16 @@
             <div class="container hero-center-content">
                 <h2>Gaza Action</h2>
                 <p class="tagline">be a part of the change</p>
+            </div>
+        </section>
 
-                <form class="search-form-center" action="search-results.html" method="GET">
-                    <input type="text" name="q" placeholder="Cerca e sostieni Gaza..." required>
-                    <button type="submit" class="search-button-center">
-                        <i class="fas fa-search"></i> Cerca
-                    </button>
+        <section class="search-section">
+            <div class="container">
+                <form onsubmit="performSearch(event)" class="search-form">
+                    <input type="text" id="search-input" placeholder="Cerca..." required>
+                    <button type="submit">Cerca</button>
                 </form>
-            </div>
-        </section>
-
-        <section class="stats-section">
-            <div class="stats-box">
-                <p>Ricerche effettuate</p>
-                <p class="number">12.345</p>
-            </div>
-        </section>
-
-        <section class="main-content-cards">
-            <div class="container card-grid">
-                
-                <div class="card">
-                    <div class="icon-circle"><i class="fas fa-heart"></i></div>
-                    <h3>Chi siamo</h3>
-                    <p>La nostra missione e il nostro impegno per aiutare Gaza nel lungo termine.</p>
-                </div>
-
-                <div class="card">
-                    <div class="icon-circle"><i class="fas fa-users"></i></div>
-                    <h3>Partner</h3>
-                    <p>Organizzazioni e aziende che sostengono il progetto.</p>
-                </div>
-
-                <div class="card">
-                    <div class="icon-circle"><i class="fas fa-book-open"></i></div>
-                    <h3>Risorse utili</h3>
-                    <p>Link, articoli e strumenti per chi vuole supportare Gaza (Skimlinks e altri)</p>
-                </div>
-
+                <div id="search-results" class="search-results"></div>
             </div>
         </section>
     </main>
@@ -90,4 +97,3 @@
     
 </body>
 </html>
-

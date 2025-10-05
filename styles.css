@@ -3,7 +3,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f8f8f8; 
+    background-color: #eaf5f5; 
     color: #333;
 }
 
@@ -13,7 +13,7 @@ body {
     margin: 0 auto;
 }
 
-/* --- HEADER SCURO --- */
+/* --- HEADER SCURO (Solo Logo e Navigazione) --- */
 header {
     background-color: #2c3e50; 
     position: relative;
@@ -51,37 +51,49 @@ nav ul li a {
     transition: color 0.3s;
 }
 
-nav ul li a:hover {
-    color: #00bcd4;
+nav ul li a:hover, .active-page { /* Colore attivo e hover */
+    color: #00bcd4 !important; 
 }
 
-/* --- SEZIONE HERO MINIMALE (Contiene Titoli e Ricerca) --- */
+/* --- SEZIONE HERO MINIMALE AL CENTRO (Contiene Titoli e Ricerca) --- */
 .minimal-hero-section {
-    background-color: #f8f8f8; 
-    padding: 30px 0 0; 
+    background-color: #e5fcfc; 
+    padding: 15px 0 0; 
     text-align: center;
 }
 
 .hero-center-content h2 {
-    font-size: 48px;
-    margin-bottom: 5px;
+    font-size: 36px;
+    margin-bottom: 0;
     color: #2c3e50;
 }
 
 .tagline {
-    font-size: 18px;
-    margin-bottom: 40px;
+    font-size: 16px;
+    margin-bottom: 20px;
     font-weight: 500;
     color: #666;
 }
 
-/* BARRA DI RICERCA CENTRALE (Grafica custom) */
+/* Specific style for smaller hero section */
+.minimal-hero-small {
+    padding: 20px 0;
+}
+
+.minimal-hero-small h2 {
+    font-size: 32px;
+}
+
+.minimal-hero-small .tagline {
+    margin-bottom: 10px;
+}
+
+/* BARRA DI RICERCA CENTRALE (solo su index.html) */
 .search-form-center {
     display: flex;
     width: 650px;
     max-width: 90%;
-    /* Margine standard per separare dalla sezione successiva */
-    margin: 0 auto 50px; 
+    margin: 0 auto 50px;
     background-color: white;
     border-radius: 6px;
     overflow: hidden;
@@ -112,30 +124,29 @@ nav ul li a:hover {
     background-color: #00a0b8;
 }
 
-/* --- SEZIONE STATISTICHE (Ristabilita con margini standard) --- */
+/* --- SEZIONE STATISTICHE --- */
 .stats-section {
-    /* Rimosso posizionamento aggressivo */
-    padding-top: 20px; 
-    padding-bottom: 50px;
+    padding-bottom: 0;
     text-align: center;
 }
 
 .stats-box {
-    /* Rimosso position: relative e top: -50px */
-    /* Rimosso margine negativo */
-    margin: 0 auto; 
-    
+    position: relative;
+    top: -30px;
+    margin: 0 auto -50px; 
     background-color: white;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     width: 250px;
+    height: 20px;
+    max-height: 90%;
     max-width: 90%;
     padding: 20px 0;
     z-index: 5;
 }
 
 .stats-box p {
-    margin: 5px 0;
+    margin: -10px 0;
 }
 
 .stats-box .number {
@@ -144,29 +155,33 @@ nav ul li a:hover {
     color: #00bcd4;
 }
 
-/* --- SEZIONE CARD PRINCIPALI (Ristabilita con margini standard) --- */
+/* * --- SEZIONE CARD PRINCIPALI (HOMEPAGE) --- */
 .main-content-cards {
-    /* Spazio tra stats box e card */
-    padding-top: 30px; 
+    padding-top: 50px; 
     padding-bottom: 80px;
 }
 
 .card-grid {
-    display: flex;
-    justify-content: center;
+    /* Griglia 3 colonne */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
     gap: 30px;
+    justify-content: center;
 }
 
 .card {
-    flex-basis: 30%;
-    min-width: 250px;
     background-color: white;
     padding: 30px;
     border-radius: 8px;
     text-align: center;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    border: 1px solid #eee; 
+    border: 1px solid #eee;
     transition: transform 0.3s, box-shadow 0.3s;
+    
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    min-height: 250px; 
 }
 
 .card:hover {
@@ -198,6 +213,51 @@ nav ul li a:hover {
     color: #666;
 }
 
+/* --- SOTTO-GRIGLIA PER CARD RISORSE UTILI (HOMEPAGE) --- */
+
+.card.resources-card {
+    text-align: left; 
+    padding-bottom: 25px; 
+    min-height: 350px; 
+}
+
+.sub-card-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 12px; 
+    margin-top: 20px; 
+    width: 100%;
+    flex-grow: 1; 
+}
+
+.sub-card {
+    background-color: #f7f7f7; 
+    border-radius: 6px;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #e0e0e0; 
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sub-card h4 {
+    font-size: 0.9em;
+    font-weight: 700;
+    margin: 0 0 4px 0;
+    color: #2c3e50; 
+    line-height: 1.2;
+}
+
+.sub-card p {
+    font-size: 0.7em; 
+    line-height: 1.3;
+    color: #666;
+    margin: 0;
+}
+
+
 /* --- FOOTER --- */
 footer {
     background-color: #2c3e50; 
@@ -215,7 +275,200 @@ footer i {
     margin-right: 5px;
 }
 
-/* MEDIA QUERY per Responsività */
+.footer-content {
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: #00bcd4;
+    transform: translateY(-3px);
+}
+
+.copyright {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* * --- STILI AGGIUNTIVI PER LA PAGINA "I NOSTRI VALORI" (valori.html) --- */
+
+/* 1. HERO più compatto per pagine interne */
+.minimal-hero-small {
+    padding: -30px 0 10px; 
+}
+
+/* 2. Sezione Introduttiva e Missione */
+.mission-intro-section {
+    padding: 20px 0; /* Ri-aggiunto un padding ridotto per separazione */
+    text-align: center;
+}
+
+.mission-box {
+    width: 70%;
+    max-width: 800px;
+    margin: 0 auto; 
+    padding: 0; 
+    line-height: 1.8;
+    color: #444;
+}
+
+.intro-value-text {
+    /* MODIFICA CHIAVE: Qui si elimina il margine verticale eccessivo */
+    margin: 0; 
+    padding: 0; 
+    
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+.intro-value-text h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.intro-value-text p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.intro-value-text strong {
+    color: #00bcd4;
+    font-weight: 700;
+}
+
+/* 3. Griglia dei Valori (3 colonne) */
+.values-grid-section {
+    padding: 30px 0;
+    background-color: white; 
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    max-width: 1200px; 
+    margin: 40px 0;
+}
+
+.value-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border: 1px solid #eee;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.value-card h3 {
+    color: #2c3e50;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.value-card p {
+    color: #666;
+    line-height: 1.5;
+}
+
+/* 4. Sezione Trasparenza (Evidenziata) */
+.transparency-section {
+    padding: 60px 0;
+    text-align: center;
+    background-color: #e5fcfc; /* Colore di sfondo ripristinato */
+}
+
+.transparency-box {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.transparency-box h3 {
+    font-size: 28px;
+    color: #00bcd4;
+}
+
+.transparency-box p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #333;
+}
+
+.transparency-box strong {
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+/* 5. Sezione Contatti (CTA) */
+.contact-cta-section {
+    padding: 50px 0 80px;
+    text-align: center;
+}
+
+.contact-content h3 {
+    color: #2c3e50;
+    font-size: 24px;
+}
+
+.contact-content p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #00bcd4;
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 700;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #00a0b8;
+}
+
+/* --- MEDIA QUERY per Responsività (COMBINATE) --- */
 @media (max-width: 768px) {
     .header-content {
         flex-direction: column;
@@ -229,100 +482,157 @@ footer i {
     .search-form-center {
         width: 100%;
     }
+    
+    /* HOMEPAGE: Le card principali tornano a una colonna unica */
     .card-grid {
-        flex-direction: column;
+        grid-template-columns: 1fr;
         gap: 20px;
     }
-    /* Rimosso posizionamento complesso nel mobile */
+    
+    /* HOMEPAGE: Regola lo spostamento del box statistiche */
     .stats-box {
-        margin: 0 auto;
+        top: -30px; 
+        margin: 0 auto -30px;
     }
     .main-content-cards {
-        padding-top: 30px; 
+        padding-top: 60px; 
+    }
+    
+    /* Search Section Styles */
+.search-section {
+    padding: 40px 0;
+    background-color: #f9f9f9;
+}
+
+.search-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    gap: 10px;
+}
+
+#search-input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+#search-input:focus {
+    border-color: #00bcd4;
+    outline: none;
+}
+
+.search-form button {
+    padding: 12px 25px;
+    background-color: #00bcd4;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.search-form button:hover {
+    background-color: #0097a7;
+}
+
+.search-results {
+    margin-top: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.search-result {
+    margin-bottom: 25px;
+    padding: 15px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.search-result h3 {
+    margin: 0 0 10px 0;
+    color: #2c3e50;
+}
+
+.search-result a {
+    color: #00bcd4;
+    text-decoration: none;
+}
+
+.search-result a:hover {
+    text-decoration: underline;
+}
+
+.search-result p {
+    margin: 0;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* HOMEPAGE: SOTTO-GRIGLIA */
+    .sub-card-grid {
+        grid-template-columns: 1fr; 
+        gap: 10px;
+    }
+    .card.resources-card {
+        align-items: center;
+        text-align: center;
+    }
+    .card.resources-card .sub-card-grid {
+        text-align: center; 
+        padding: 0;
+    }
+
+    /* PAGINA VALORI: La griglia dei valori diventa due colonne su tablet e una colonna su mobile */
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        max-width: 600px;
+    }
+    
+    .value-card {
+        padding: 20px;
+    }
+
+    .transparency-section {
+        padding: 40px 0;
+    }
+    
+    .transparency-box h3 {
+        font-size: 24px;
+    }
+    
+    .mission-box {
+        width: 100%;
+        padding: 0 15px; 
+        margin: 0 auto; 
+    }
+
+    .intro-value-text {
+        padding: 0;
+    }
+    
+    .footer-main {
+        flex-direction: column;
+        gap: 15px;
     }
 }
 
-/* ================================================= */
-/* STILI PER GOOGLE CUSTOM SEARCH (CSE) MODIFICATI   */
-/* Colori di Google, Font 'Montserrat', Caratteri ingranditi. */
-/* ================================================= */
-
-/* 1. Contenitore Generale e Font */
-.gsc-control-cse,
-.gsc-control-cse .gsc-table-result {
-    font-family: 'Montserrat', sans-serif !important;
-    background-color: transparent !important; 
+/* Mobile devices (480px and below) */
+@media (max-width: 480px) {
+    .values-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        max-width: 100%;
+    }
+    
+    .value-card {
+        padding: 20px;
+    }
 }
-
-/* 2. Stile del TITOLO (Link principale) */
-.gsc-control-cse .gsc-webResult .gsc-result .gs-title,
-.gsc-control-cse .gsc-webResult .gsc-result .gs-title * {
-    /* Colore blu standard di Google */
-    color: #1a0dab !important;
-    font-size: 2.4em !important; /* DIMENSIONE AUMENTATA per visibilità */
-    font-weight: 500 !important; 
-    text-decoration: none !important;
-}
-
-/* Stile del titolo visitato */
-.gsc-control-cse .gsc-webResult .gsc-result .gs-title a:visited {
-    color: #609 !important;
-}
-
-.gsc-control-cse .gsc-webResult .gsc-result .gs-title a:hover {
-    text-decoration: underline !important;
-}
-
-/* 3. Stile dell'URL (Percorso) */
-.gsc-control-cse .gsc-webResult .gsc-url-top,
-.gsc-control-cse .gsc-webResult .gsc-url-top * {
-    /* Colore verde/grigio scuro di Google */
-    color: #006621 !important;
-    font-size: 2.0em !important; /* DIMENSIONE AUMENTATA */
-    font-style: normal !important;
-}
-
-/* 4. Stile dello SNIPPET (Descrizione del risultato) */
-.gsc-control-cse .gsc-webResult .gsc-result .gs-snippet {
-    /* Colore grigio scuro di Google */
-    color: #4d5156 !important;
-    line-height: 1.4 !important;
-    font-size: 2.1em !important; /* DIMENSIONE AUMENTATA per una migliore lettura */
-    font-weight: 400 !important;
-}
-
-/* 5. Separazione e Bordi dei Risultati */
-.gsc-control-cse .gsc-table-result {
-    border: none !important;
-    padding: 10px 0 !important;
-    margin: 0 !important;
-}
-
-/* Regola il testo delle statistiche */
-.gsc-result-info {
-    color: #666 !important;
-    font-size: 0.9em !important;
-    padding-bottom: 10px !important;
-}
-
-/* Stile per la paginazione */
-.gsc-cursor-box {
-    border-top: 1px solid #eee !important;
-    padding-top: 20px !important;
-}
-
-.gsc-cursor,
-.gsc-cursor-page {
-    font-size: 1em !important;
-    font-weight: 500 !important;
-}
-
-.gsc-cursor-page {
-    color: #1a0dab !important; 
-}
-
-.gsc-cursor-current-page {
-    font-weight: 700 !important; 
-    color: #2c3e50 !important; 
-}
-
