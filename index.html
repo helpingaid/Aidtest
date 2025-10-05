@@ -8,49 +8,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     
+    <script async src="https://cse.google.com/cse.js?cx=a7dd1f714294e49b9"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TP3S3CX0L4"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-TP3S3CX0L4');
-    </script>
-    
-    <script>
-        function performSearch(event) {
-            event.preventDefault();
-            const query = document.getElementById('search-input').value;
-            const resultsDiv = document.getElementById('search-results');
-            
-            // Show loading state
-            resultsDiv.innerHTML = '<p>Ricerca in corso...</p>';
-            
-            // Perform the search using Google's API
-            fetch(`https://www.googleapis.com/customsearch/v1?key=YOUR_API_KEY&cx=a7dd1f714294e49b9&q=${encodeURIComponent(query)}`)
-                .then(response => response.json())
-                .then(data => {
-                    let resultsHtml = '<h2>Risultati della Ricerca</h2>';
-                    
-                    if (data.items && data.items.length > 0) {
-                        data.items.forEach(item => {
-                            resultsHtml += `
-                                <div class="search-result">
-                                    <h3><a href="${item.link}">${item.title}</a></h3>
-                                    <p>${item.snippet}</p>
-                                </div>
-                            `;
-                        });
-                    } else {
-                        resultsHtml += '<p>Nessun risultato trovato.</p>';
-                    }
-                    
-                    resultsDiv.innerHTML = resultsHtml;
-                })
-                .catch(error => {
-                    resultsDiv.innerHTML = '<p>Si è verificato un errore durante la ricerca.</p>';
-                    console.error('Search error:', error);
-                });
-        }
     </script>
 </head>
 <body>
