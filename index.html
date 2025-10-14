@@ -3,58 +3,355 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gaza Action - Centro Ricerca</title>
-    <link rel="stylesheet" href="styles.css"> 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     
-    <script async src="https://cse.google.com/cse.js?cx=a7dd1f714294e49b9"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TP3S3CX0L4"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-TP3S3CX0L4');
+    <!-- SEO Meta Tags -->
+    <title>Kindorya - Motore di Ricerca Solidale per Aiutare Gaza | Ogni Ricerca Conta</title>
+    <meta name="description" content="Kindorya è un motore di ricerca solidale che trasforma ogni tua ricerca online in aiuti concreti per la Palestina. Cerca sul web e sostieni progetti umanitari gratuitamente.">
+    <meta name="keywords" content="ricerca solidale, aiuti Gaza, Palestina, motore ricerca etico, donazioni online, shopping solidale, beneficenza, progetti umanitari">
+    <meta name="author" content="Kindorya">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="https://www.kindorya.org/index.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kindorya.org/">
+    <meta property="og:title" content="Kindorya - Ricerca Solidale per Aiutare Gaza">
+    <meta property="og:description" content="Trasforma ogni tua ricerca online in aiuti concreti per la Palestina. Gratis, trasparente, solidale.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/helpingaid/Action/main/Albero.png">
+    <meta property="og:locale" content="it_IT">
+    <meta property="og:site_name" content="Kindorya">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.kindorya.org/">
+    <meta name="twitter:title" content="Kindorya - Ricerca Solidale per Aiutare Gaza">
+    <meta name="twitter:description" content="Trasforma ogni tua ricerca online in aiuti concreti per la Palestina.">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/helpingaid/Action/main/Albero.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/helpingaid/Action/main/Albero.png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/cookie-consent.css">
+    
+    <!-- Structured Data - Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Kindorya",
+      "url": "https://www.kindorya.org",
+      "logo": "https://raw.githubusercontent.com/helpingaid/Action/main/Albero.png",
+      "description": "Azione umanitaria che trasforma ricerche in aiuti concreti per la Palestina",
+      "sameAs": [
+        "https://www.kindorya.org"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "info@kindorya.org",
+        "contactType": "Customer Service"
+      }
+    }
+    </script>
+    
+    <!-- Structured Data - WebSite -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Kindorya",
+      "url": "https://www.kindorya.org",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.kindorya.org/results.html?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
     </script>
 </head>
 <body>
-    
-    <header>
-        <div class="container header-content">
-            <h1 class="logo">Gaza Action</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html" class="active-page">Home</a></li>
-                    <li><a href="valori.html">Valori</a></li>
-                    <li><a href="affiliazioni.html">Affiliazioni</a></li>
-                    <li><a href="#">Come funziona</a></li>
-                    <li><a href="#">FAQ</a></li>
-                </ul>
+    <!-- HEADER -->
+    <header role="banner">
+        <div class="header-content">
+            <a href="index.html" class="logo" aria-label="Kindorya - Torna alla homepage">
+                <img src="https://raw.githubusercontent.com/helpingaid/Action/main/Albero.png" alt="Logo Kindorya - Albero della vita che rappresenta crescita e solidarietà">
+                <span class="logo-text">Kindorya</span>
+            </a>
+            <nav role="navigation" aria-label="Menu principale">
+                <a href="index.html" class="active">Home</a>
+                <a href="valori.html">Valori</a>
+                <a href="come-funziona.html">Come Funziona</a>
+                <a href="shopping.html">Shopping</a>
+                <a href="progetti.html">Progetti</a>
+                <a href="risorse.html">Risorse</a>
+                <a href="faq.html">FAQ</a>
             </nav>
         </div>
     </header>
 
-    <main>
-        <section class="minimal-hero-section">
-            <div class="container hero-center-content">
-                <h2>Gaza Action</h2>
-                <p class="tagline">be a part of the change</p>
+    <!-- HERO SECTION -->
+    <main role="main">
+        <section class="hero" aria-label="Sezione principale con motore di ricerca">
+            <h1>Search and Save People</h1>
+            <p class="subtitle">Be Part of the Change</p>
+            <div class="search-container" role="search" aria-label="Motore di ricerca Kindorya">
+                <script async src="https://cse.google.com/cse.js?cx=a7dd1f714294e49b9"></script>
+                <div class="gcse-searchbox-only" data-resultsUrl="results.html" data-newWindow="false"></div>
             </div>
+            <p class="reminder">📌 Impostaci come homepage e salvaci tra i preferiti</p>
         </section>
 
-        <section class="search-section">
-            <div class="container">
-                <div class="gcse-searchbox" data-resultsUrl="search-results.html"></div>
-                <div class="gcse-searchresults"></div>
+        <!-- SHOPPING PARTNERS SECTION -->
+        <section class="cards-section" aria-label="Partner per lo shopping solidale">
+            <h2>Shopping Partners</h2>
+            <div class="cards">
+                <a href="https://www.ebay.it" target="_blank" rel="noopener noreferrer" class="card" aria-label="Vai su eBay per shopping solidale">
+                    <div class="card-icon" aria-hidden="true">🛍️</div>
+                    <h3>eBay</h3>
+                    <p>Compra responsabile</p>
+                </a>
+                <a href="https://www.yoox.com" target="_blank" rel="noopener noreferrer" class="card" aria-label="Vai su YOOX per moda con impatto">
+                    <div class="card-icon" aria-hidden="true">👔</div>
+                    <h3>YOOX</h3>
+                    <p>Moda con impatto</p>
+                </a>
+                <a href="https://www.aliexpress.com" target="_blank" rel="noopener noreferrer" class="card" aria-label="Vai su AliExpress per shopping etico">
+                    <div class="card-icon" aria-hidden="true">📦</div>
+                    <h3>AliExpress</h3>
+                    <p>Shopping etico</p>
+                </a>
+                <a href="shopping.html" class="card" aria-label="Scopri tutti i partner per lo shopping solidale">
+                    <div class="card-icon" aria-hidden="true">❤️</div>
+                    <h3>Altri Partner</h3>
+                    <p>Scopri tutti</p>
+                </a>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="container footer-content">
-            <p><i class="fas fa-globe"></i> Gaza Action</p>
-        </div>
+    <!-- FOOTER -->
+    <footer role="contentinfo">
+        <p>&copy; 2024 Kindorya - Tutti i diritti riservati</p>
+        <p style="margin-top: 10px;">Ricerca con uno scopo. Ogni click conta.</p>
     </footer>
+
+    <!-- ==========================================
+         COOKIE CONSENT SYSTEM
+         ========================================== -->
     
+    <!-- OVERLAY -->
+    <div id="cookie-overlay"></div>
+
+    <!-- COOKIE CONSENT BANNER -->
+    <div id="cookie-consent-banner">
+        <div class="cookie-banner-content">
+            <div class="cookie-icon">🍪</div>
+            <div class="cookie-text">
+                <h3>We Value Your Privacy</h3>
+                <p>
+                    We use cookies to enhance your browsing experience, serve personalized ads or content, 
+                    and analyze our traffic. By clicking "Accept All", you consent to our use of cookies.
+                    <a id="open-privacy-link">Read our Privacy Policy</a>
+                </p>
+            </div>
+            <div class="cookie-buttons">
+                <button class="cookie-btn" id="accept-all-btn">
+                    ✓ Accept All
+                </button>
+                <button class="cookie-btn" id="reject-all-btn">
+                    ✗ Reject All
+                </button>
+                <button class="cookie-btn" id="settings-btn">
+                    ⚙️ Cookie Settings
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- COOKIE SETTINGS MODAL -->
+    <div id="cookie-settings-modal">
+        <div class="modal-header">
+            <h2>Cookie Preferences</h2>
+            <p>Manage your cookie settings</p>
+            <button class="modal-close" id="close-settings-modal">×</button>
+        </div>
+        <div class="modal-body">
+            <!-- Necessary Cookies -->
+            <div class="cookie-category">
+                <div class="category-header">
+                    <div>
+                        <h3>Necessary Cookies <span class="required-label">REQUIRED</span></h3>
+                    </div>
+                    <label class="toggle-switch required">
+                        <input type="checkbox" id="necessary-cookies" checked disabled>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                <p class="category-description">
+                    These cookies are essential for the website to function properly. They enable basic features 
+                    like page navigation and access to secure areas. The website cannot function properly without these cookies.
+                </p>
+                <div class="category-examples">
+                    <strong>Examples:</strong> Session management, security tokens, language preferences
+                </div>
+            </div>
+
+            <!-- Analytics Cookies -->
+            <div class="cookie-category">
+                <div class="category-header">
+                    <h3>Analytics Cookies</h3>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="analytics-cookies">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                <p class="category-description">
+                    These cookies help us understand how visitors interact with our website by collecting and 
+                    reporting information anonymously. This helps us improve our website's performance.
+                </p>
+                <div class="category-examples">
+                    <strong>Services:</strong> Google Analytics, page views tracking, user behavior analysis
+                </div>
+            </div>
+
+            <!-- Marketing Cookies -->
+            <div class="cookie-category">
+                <div class="category-header">
+                    <h3>Marketing Cookies</h3>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="marketing-cookies">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                <p class="category-description">
+                    These cookies are used to track visitors across websites to display relevant advertisements. 
+                    They help fund our humanitarian projects through ethical advertising.
+                </p>
+                <div class="category-examples">
+                    <strong>Services:</strong> Google AdSense, personalized ads, remarketing campaigns
+                </div>
+            </div>
+
+            <!-- Functional Cookies -->
+            <div class="cookie-category">
+                <div class="category-header">
+                    <h3>Functional Cookies</h3>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="functional-cookies">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                <p class="category-description">
+                    These cookies enable enhanced functionality and personalization, such as remembering your 
+                    language preference or search history to provide a better user experience.
+                </p>
+                <div class="category-examples">
+                    <strong>Examples:</strong> Language selection, search counter, personalized content
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="cookie-btn" id="reject-selected-btn">
+                Reject All
+            </button>
+            <button class="cookie-btn" id="save-preferences-btn">
+                Save Preferences
+            </button>
+        </div>
+    </div>
+
+    <!-- PRIVACY POLICY MODAL -->
+    <div id="privacy-policy-modal">
+        <div class="modal-header">
+            <h2>Privacy Policy</h2>
+            <p>Last updated: October 2024</p>
+            <button class="modal-close" id="close-privacy-modal">×</button>
+        </div>
+        <div class="privacy-content">
+            <h3>1. Introduction</h3>
+            <p>
+                Welcome to Kindorya. We respect your privacy and are committed to protecting your personal data. 
+                This privacy policy explains how we collect, use, and protect your information when you use our 
+                solidarity search engine.
+            </p>
+
+            <h3>2. Information We Collect</h3>
+            <p>We collect the following types of information:</p>
+            <ul>
+                <li><strong>Search Data:</strong> Your search queries and search history (stored locally)</li>
+                <li><strong>Usage Data:</strong> Information about how you interact with our website</li>
+                <li><strong>Technical Data:</strong> IP address, browser type, device information</li>
+                <li><strong>Cookie Data:</strong> Information stored in cookies as described in our cookie policy</li>
+            </ul>
+
+            <h3>3. How We Use Your Information</h3>
+            <p>We use your information to:</p>
+            <ul>
+                <li>Provide and improve our search services</li>
+                <li>Generate revenue through ethical advertising to fund humanitarian projects</li>
+                <li>Analyze website performance and user behavior</li>
+                <li>Personalize your experience on our platform</li>
+                <li>Comply with legal obligations</li>
+            </ul>
+
+            <h3>4. Cookie Policy</h3>
+            <p>
+                We use cookies and similar technologies to enhance your browsing experience. You can manage your 
+                cookie preferences at any time using our cookie settings tool. Essential cookies cannot be disabled 
+                as they are necessary for the website to function.
+            </p>
+
+            <h3>5. Third-Party Services</h3>
+            <p>We use the following third-party services:</p>
+            <ul>
+                <li><strong>Google Custom Search:</strong> To provide search functionality</li>
+                <li><strong>Google AdSense:</strong> To display advertisements and generate revenue</li>
+                <li><strong>Google Analytics:</strong> To analyze website traffic and user behavior</li>
+            </ul>
+
+            <h3>6. Data Retention</h3>
+            <p>
+                We retain your data only for as long as necessary to fulfill the purposes outlined in this policy. 
+                Search counters and preferences are stored locally in your browser and can be deleted at any time.
+            </p>
+
+            <h3>7. Your Rights</h3>
+            <p>Under GDPR and other privacy laws, you have the right to:</p>
+            <ul>
+                <li>Access your personal data</li>
+                <li>Correct inaccurate data</li>
+                <li>Request deletion of your data</li>
+                <li>Object to data processing</li>
+                <li>Withdraw consent at any time</li>
+            </ul>
+
+            <h3>8. Data Security</h3>
+            <p>
+                We implement appropriate technical and organizational measures to protect your personal data 
+                against unauthorized access, alteration, disclosure, or destruction.
+            </p>
+
+            <h3>9. Contact Us</h3>
+            <p>
+                If you have questions about this privacy policy or wish to exercise your rights, please contact us at:
+                <strong>info@kindorya.org</strong>
+            </p>
+
+            <h3>10. Changes to This Policy</h3>
+            <p>
+                We may update this privacy policy from time to time. We will notify you of any significant changes 
+                by posting the new policy on this page with an updated "Last Updated" date.
+            </p>
+        </div>
+    </div>
+
+    <!-- COOKIE SETTINGS LINK (sempre visibile) -->
+    <div id="cookie-settings-link">
+        🍪 Cookie Settings
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="/cookie-consent.js"></script>
 </body>
 </html>
